@@ -1,0 +1,277 @@
+@charset UTF-8;
+/*================================Formatação da página==================================*/
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*================================Formatação do body===================================*/
+body {
+    width: 100%;
+    background: url(https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-black-geometric-gradient-simple-banner-image_61980.jpg);
+    padding: 0;
+    margin: 0;
+}
+/*================================Formatação da interface==============================*/
+div#interface {
+    width: 75%;
+    background-color: transparent;
+    margin: 0 auto;
+    text-align: left;
+    margin: -20px auto 0px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    padding: 10px 10px 10px 10px;
+}
+@media(max-width: 460px){
+  div#interface{
+    width: 100%;
+  }
+}
+/*================================Formatação do container================================*/
+.container  {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+    @media (min-width: 1170px) {
+        .container {
+            max-width: 1170px;
+            padding: 0;
+        }
+    }
+
+/*================================Linhas================================*/
+.row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+    .row:before,
+    .row:after {
+        content: "";
+        display: table;
+    }
+    .row:after {
+        clear: both;
+    }
+
+/*================================Colunas================================*/
+.col {
+    display: inline-block;
+    vertical-align: top;
+    min-height: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+    margin-right: -4px;
+    *zoom: 1;
+    *display: inline;
+}
+/*================================Formatação do cabecalho================================*/
+.cabecalho{
+    margin-top: 20px;
+    margin-bottom: -10px;
+    background-color: #4f4f4f;
+    height: 160px;
+    border-top: solid 4px #FFD700;
+    border-bottom: solid 4px #FFD700;
+    border-radius: 6px;
+}
+.cabecalho img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 900px){
+    .cabecalho img{
+    width: 250px;
+    padding: 15px;
+    }
+}
+@media (max-width: 899px){
+    .cabecalho img{
+    width: 200px;
+    padding: 20px;
+    }
+}
+/*================================Formatação do menu==================================*/
+/*================================Formatação da nav menu==============================*/
+.menu{
+    width: 100%;
+    height: 55px;
+    background-color: #FFD700;
+    font-family: 'Lobster Two', cursive;
+    border-radius: 6px;
+}
+/*================================Formatação das listas===============================*/
+.menu ul{
+    list-style: none;
+    position: relative;
+}
+.menu ul li{
+    width: 150px;
+    float: left;
+}
+.menu ul li:hover ul{
+    visibility: visible;
+}
+/*================================Formatação dos links================================*/
+.menu a{
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #FFD700;
+    color: #555;
+    border-radius: 6px;
+}
+.menu a:hover{
+    height: 55px;
+    background-color: #3f3f3f;
+    color: white;
+}
+/*================================Formatação do menu hamburguer========================*/
+label[for="bt_menu"]{
+    padding: 5px;
+    background-color: #FFD700;
+    color: white;
+    font-family: 'Arial';
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    display: none;
+    margin-top: 5px;
+}
+#bt_menu{
+    display: none;
+}
+@media(max-width: 900px){
+    label[for="bt_menu"]{
+        display: block;
+    }
+    #bt_menu:checked ~ .menu{
+        margin-left: 0;
+        z-index: 100000;
+    }
+    .menu{
+        margin-top: 3px;
+        margin-left: -150%;
+        transition: all .4s;
+        position: absolute;
+        width: 68%;
+    }
+    .menu ul li{
+        width: 100%;
+    }
+}
+@media(max-width: 460px){
+    label[for="bt_menu"]{
+        display: block;
+    }
+    #bt_menu:checked ~ .menu{
+        margin-left: 0;
+        z-index: 100000;
+    }
+    .menu{
+        margin-top: 3px;
+        margin-left: -150%;
+        transition: all .4s;
+        position: absolute;
+        width: 81%;
+    }
+    .menu ul li{
+        width: 100%;
+    }
+}
+/*============================Formatação do Titulo===================================*/
+.titulo{
+    background-color: #3f3f3f;
+    margin-top: 5px;
+    padding: 12px;
+    border-radius: 6px;
+}
+.titulo h1{
+    font-family: 'Lobster Two', cursive;
+    color: white;
+}
+/*============================Formatação dos cards===================================*/
+#principal{
+    background-color: #4f4f4f;
+    margin-top: 5px;
+    border-radius: 6px;
+    padding: 10px;
+    color: white;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#principal img{
+    width: 100%;
+    max-width: 515px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+h2 {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+}
+#principal p{
+    color: white;
+    text-decoration: none;
+    font-family: 'Lobster Two', cursive;
+    text-align: justify;
+}
+.postou{
+    background-color: #4f4f4f;
+    margin-top: 5px;
+    border-radius: 6px;
+    padding: 10px;
+    color: white;
+    padding-bottom: 70px;
+    border-bottom: solid 4px #FFD700;
+}
+#like{
+    margin: 7px;
+}
+#curtir{
+    padding: 5px;
+    color: #3f3f3f;
+    background-color: #FFD700;;
+    border-color: #FFD700;;
+    border-radius: .25rem;
+    text-decoration: none;
+}
+#comentar{
+    color: #3f3f3f;
+    background-color: #FFD700;;
+    border-color: #FFD700;;
+    border-radius: .25rem;
+    margin-top: 5px;
+}
+@media(min-width: 900px){
+    #principal img{
+        min-height: 200px;
+    }
+}
+/*============================Formatação do Footer===================================*/
+footer#rodape {
+    height: auto;
+    background-color: #3b3b3b;
+    color: white;
+    clear: both;
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+    margin-top: 5px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: solid 4px #FFD700;
+    border-radius: 6px;
+    border-top: solid 4px #FFD700;
+}

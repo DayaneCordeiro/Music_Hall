@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro</title>
+		<meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no"/>
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster+Two&display=swap" rel="stylesheet">
+        <link rel="icon" href="icone.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="_css/estilo.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="interface">
+        <div class="container">
+<!-- ======================================Cabecalho====================================== -->
+            <div class="row">
+                <div class="col">
+                    <div class="cabecalho">
+                        <a href="index.html"><img src="logo.png"></a>
+                    </div>
+                </div>
+            </div>
+<!-- ==================================== Menu ==================================== -->
+            <div class="row">
+                <div class="col">
+                    <div class="mainmenu">
+                        <input type="checkbox" id="bt_menu"/>
+                        <label for="bt_menu">&#9776;</label>
+                            <nav class="menu">
+                                <ul>
+                                    <li><a href="index.html"><b>Home</b></a></li>
+                                    <li><a href=""><b>Link Github</b></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+<!-- ================================= Parte principal ================================== -->
+                <div class="row">
+                    <div class="col col-setenta">
+                        <div id="principal">
+                            <form id="form1" action="localstorage" method="post">
+                              <div class="form-group">
+                                <label for="title">Titulo do Post:</label>
+                                <input type="text" name="title" class="form-control" id="title" required placeholder="Exemplo...">
+                              </div>
+                              <div class="form-group">
+                                <label for="author">Autor:</label>
+                                <input type="text" name="aut" class="form-control" id="author" required placeholder="Digite seu nome...">
+                              </div>
+                              <div class="form-group">
+                                <label for="img">Escolha a imagem:</label>
+                                <input type="file" accept="image/jpg, image/jpeg, image/png" name="img" class="form-control-file" id="img">
+                              </div>
+                              <div class="form-group">
+                                <label for="text">Digite o texto:</label>
+                                <textarea class="form-control" name="txt" id="text" required rows="3"></textarea>
+                              </div>
+	                            </form>
+	                            <button id="publicar" type="submit" class="btn btn-success">Publicar</button>
+															<a href="index.html">
+																<button type="button" class="btn btn-danger">Cancelar</button>
+															</a>
+                        </div>
+                    </div>
+                </div>
+<!-- ============================================ Footer ================================== -->
+            <footer id="rodape">
+                <p>&copy; Copyright 2019 <br/>By Armando Amorim & Dayane Cordeiro<br/>Music Hall</p>
+            </footer>
+
+						<!-- SCRIPTS -->
+						<!-- jQuery -->
+						<script src="_script/jquery.min.js"></script>
+						<!-- Fake DB -->
+						<script src="_script/fakeDB.js"></script>
+						<!-- Funções do Banco -->
+						<script src="_script/myscript.js"></script>
+						<!-- Página -->
+            <script language="javascript" type="text/javascript">
+							// IMG em base 64 (código da imagem)
+							var imgBase64;
+
+							// Anexar uma imagem
+							$("#img").on("change", function () {
+								// Há arquivos carregados
+								if (this.files && this.files[0]){
+									// Novo leitor
+									let reader = new FileReader();
+									// Ler o arquivo
+									reader.readAsDataURL(this.files[0]);
+									// Ao terminar a leitura
+									reader.onload = function(e) {
+										// Base64 da imagem
+										imgBase64 = reader.result;
+									};
+								}
+							});
+
+							// Quando "publicar" for clicado
+							$("#publicar").on("click", function (e) {
+								// Não recarrega a página
+								e.preventDefault();
+
+								// Pega os valores dos inputs
+								let title = $("#title").val();
+								let author = $("#author").val();
+								let img = imgBase64;
+								let text = $("#text").val();
+								let date = new Date();
+
+								// Salva o post
+								insertPost(title, author, img, text, date);
+
+								// Redireciona pra página principal
+								window.location = "index.html"
+							});
+
+
+                // function validar() {
+                //     var title = title.value;
+                //     var aut = aut.value;
+                //     var img = img.value;
+                //     var text = txt.value;
+                // }
+                // document.getElementById('form1').submit();
+                // if (title == "") {
+                // alert('Preencha o campo com o titulo do post.');
+                // form1.title.focus();
+                // return false;
+                // }
+            </script>
+        </div>
+        </div>
+    </body>
+</html>

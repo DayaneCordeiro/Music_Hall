@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Music Hall</title>
+		<meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no"/>
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster+Two&display=swap" rel="stylesheet">
+        <link rel="icon" href="icone.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="_css/estilo.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="interface">
+        <div class="container">
+<!-- ======================================Cabecalho====================================== -->
+            <div class="row">
+                <div class="col">
+                    <div class="cabecalho">
+                        <a href="index.html"><img src="logo.png"></a>
+                    </div>
+                </div>
+            </div>
+<!-- ==================================== Menu ==================================== -->
+            <div class="row">
+                <div class="col">
+                    <div class="mainmenu">
+                        <input type="checkbox" id="bt_menu"/>
+                        <label for="bt_menu">&#9776;</label>
+                            <nav class="menu">
+                                <ul>
+                                    <li><a href="cadastro.html"><b>+ Adicionar Post</b></a></li>
+                                    <li><a href=""><b>Link Github</b></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+<!-- ======================================Titulo====================================== -->
+            <div class="row">
+                <div class="col">
+                    <div class="titulo">
+                        <h1>Últimos Posts:</h1>
+                    </div>
+                </div>
+            </div>
+<!-- ================================= Parte principal ================================== -->
+                <div class="row">
+                    <div class="col col-setenta">
+                        <div id="principal">
+
+                        </div>
+                    </div>
+                </div>
+<!-- ============================================ Footer ================================== -->
+            <footer id="rodape">
+                <p>&copy; Copyright 2019 <br/>By Armando Amorim & Dayane Cordeiro<br/>Music Hall</p>
+            </footer>
+<!-- ============================================ Script ================================== -->
+        </div>
+        </div>
+
+				<!-- SCRIPTS -->
+				<!-- jQuery -->
+				<script src="_script/jquery.min.js"></script>
+				<!-- Fake DB -->
+				<script src="_script/fakeDB.js"></script>
+				<!-- Funções do Banco -->
+				<script src="_script/myscript.js"></script>
+				<!-- Página -->
+        <script>
+					// Quando o documento estiver pronto
+					$(document).on("ready", function () {
+						carregaPosts();
+					})
+        </script>
+        <script>
+            // $(window).load(function() {
+            //     var count = 1;
+            //     ${btn btn-warning}.click(function() {
+            //         document.getElementById("span").innerHTML = "" + count + "";
+            //         document.getElementById("span").value = count;
+            //         count += 1;
+            //     });
+						//
+            // });
+            // $(window).load(function() {
+            //   var count = 0;
+            //   $('a[name=botao]').click(function() {
+            //     document.getElementById("span").innerHTML = "" + count + "";
+            //     document.getElementById("curtir").value = count;
+            //     count += 1;
+            //   });
+            // });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
